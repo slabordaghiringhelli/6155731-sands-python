@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = Signals and systems
+version = "0.1.0"
+description = In this project I created functions, with docstrings in order to describe said functions. Moreover, I also plotted these functions and explained their meanings and the code used to plot them in the README.md file.
+authors = [
+    {name = Sergi, email = "your.email@student.uni.nl"}
+]
+dependencies = [numpy, matplotlib, "you-actually-use"]
