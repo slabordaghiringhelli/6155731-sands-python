@@ -28,30 +28,42 @@ print("hello")
 #Unit step function
 
 def unit_step_function(t):
-    t = np.linspace(-10,20)
     """creates a function that returns 1 when t>=0 and returns 0 elsewhere"""
     return np.where(t>0, 1, 0)
     
-t = np.linspace(-10,20)
+
+#common time vector 
+t = np.linspace(-10,20,1000)
 u_values = unit_step_function(t)
 
-
+plt.plot(t, u_values)
+plt.title("Unit Step Function")
+plt.xlabel("t")
+plt.ylabel("u(t)")
+plt.grid(True)
+plt.show()
 
 
 
 #Periodic square wave function
 
 def square_wave(t, period=1) :
-    """Creates a periodic square wave function.
+    """Creates a periodic square wave function that yields 1 when t_periodic is less than 0.5 and -1 when otherwise.
      The time has been defined using an np.linspace() function from 0 to 10 using a 100 points in that aforementioned interval."""
-    t = np.linspace(0,10,100)
-    t_periodic = t % 1  #Here I ensure that the time in the function is periodic
+    t_periodic = np.mod(t,period)
     return np.where(t_periodic<period/2,1,-1)
+
 y = square_wave(t, period=1)   
 
-
-plt.plot(t,y)
+plt.plot(t, y)
+plt.title("Square Wave")
+plt.xlabel("t")
+plt.ylabel("y(t)")
+plt.ylim(-3, 3)
+plt.grid(True)
 plt.show()
+
+
 
 
 
@@ -59,7 +71,11 @@ plt.show()
 
 u_new = unit_step_function(t-2)
 
-plt.plot(u_new)
+plt.plot(t, u_new)
+plt.title("Shifted Unit Step Function (t-2)")
+plt.xlabel("t")
+plt.ylabel("u(t-2)")
+plt.grid(True)
 plt.show()
 
 
@@ -80,4 +96,6 @@ plt.title("z=u(t)·y")
 plt.xlabel("time/t")
 plt.ylabel("z")
 plt.xlim(0,5)
+plt.grid(True)
 plt.show()
+
