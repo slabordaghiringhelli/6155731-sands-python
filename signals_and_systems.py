@@ -43,9 +43,9 @@ u_values = unit_step_function(t)
 def square_wave(t, period=1) :
     """Creates a periodic square wave function.
      The time has been defined using an np.linspace() function from 0 to 10 using a 100 points in that aforementioned interval."""
+    t = np.linspace(0,10,100)
     t_periodic = t % 1  #Here I ensure that the time in the function is periodic
     return np.where(t_periodic<period/2,1,-1)
-t = np.linspace(0,10,100)
 y = square_wave(t, period=1)   
 
 
