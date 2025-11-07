@@ -9,4 +9,4 @@ description = In this project I created functions, with docstrings in order to d
 authors = [
     {name = Sergi, email = "slabordaghirin@tudelft.nl"}
 ]
-dependencies = [numpy, matplotlib, "you-actually-use"]
+dependencies = [numpy, matplotlib]
