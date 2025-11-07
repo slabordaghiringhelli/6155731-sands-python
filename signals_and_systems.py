@@ -28,6 +28,7 @@ print("hello")
 #Unit step function
 
 def unit_step_function(t):
+    t = np.linspace(-10,20)
     """creates a function that returns 1 when t>=0 and returns 0 elsewhere"""
     return np.where(t>0, 1, 0)
     

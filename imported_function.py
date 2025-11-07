@@ -26,3 +26,55 @@ plt.show()
 print("hello") 
 
 print("Sergi is testing")
+
+from signals_and_systems import unit_step_function
+from signals_and_systems import square_wave
+
+
+#Time shifting for the unit step function
+t = np.linspace(-10,20)
+u_new = unit_step_function(t-2)
+plt.plot(u_new)
+plt.show()
+
+
+#Time shifting for the square wave function
+t = np.linspace(0,10,100)
+y = square_wave(t, period=1)
+t_shift = 2
+
+y_new = -2*square_wave(t-t_shift, period=1)
+
+plt.plot(t, y_new)
+plt.xlabel()
+plt.ylim(-3,3)
+plt.show()
+
+
+#Multiplication of two different functions
+
+z = unit_step_function(t)*y
+plt.plot(t,z)
+plt.title("z=u(t)·y")
+plt.xlabel("time/t")
+plt.ylabel("z")
+plt.xlim(0,5)
+plt.show()
+
+
+#Time scaling for the unit step function
+
+u_scaled = unit_step_function(2*t) 
+
+plt.plot(t, u_scaled)
+plt.title("scaled unit step function")
+plt.xlabel("time/t")
+plt.ylabel("u(2t)")
+plt.xlim(-5,5)
+plt.show()
+
+
+#Time scaling for the square wave function
+y_scaled = square_wave(2*t, period=5)
+plt.plot(y_scaled)
+plt.title
