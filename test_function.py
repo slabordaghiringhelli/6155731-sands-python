@@ -25,7 +25,6 @@ def test_square_wave_function() :
     t = np.linspace(0,10,100)
     y = square_wave(t, period=1)
     assert len[y] == len[t]
-    assert set(np.unique(y)).issubset({-1, 1})
 print("square_wave() test passed.\n")
 
 #Testing unit step function

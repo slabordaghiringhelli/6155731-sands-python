@@ -46,7 +46,8 @@ t_shift = 2
 y_new = -2*square_wave(t-t_shift, period=1)
 
 plt.plot(t, y_new)
-plt.xlabel()
+plt.xlabel("t")
+plt.ylabel()
 plt.ylim(-3,3)
 plt.show()
 
@@ -77,4 +78,8 @@ plt.show()
 #Time scaling for the square wave function
 y_scaled = square_wave(2*t, period=5)
 plt.plot(y_scaled)
-plt.title
+plt.title("scaled square wave function")
+plt.xlabel("t")
+plt.ylabel("y(2t)")
+plt.grid(True)
+plt.show()
